@@ -3,12 +3,13 @@ package http_client
 import (
 	"context"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/valueobject"
 	"github.com/bulutcan99/weekly-task-scheduler/pkg/helper"
 	"github.com/goccy/go-json"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log/slog"
-	"time"
+	"sync"
 )
 
 type Fetcher struct {
@@ -23,39 +24,63 @@ func NewFetcher(providerService interfaces.IProviderService, taskService interfa
 	}
 }
 
-func (s *Fetcher) Fetch(ctx context.Context) error {
+func (s *Fetcher) FetchTasksWithContext(ctx context.Context) error {
 	providers, err := s.providerService.GetProviders(ctx)
 	if err != nil {
 		return err
 	}
 
+	var wg sync.WaitGroup
+	errCh := make(chan error, len(providers))
+
 	for _, provider := range providers {
-		_, body, err := SendGetRequest(provider.Url)
-		if err != nil {
-			continue
-		}
+		wg.Add(1)
+		go func(provider *entity.Provider) {
+			defer wg.Done()
 
-		var tasks []map[string]interface{}
-		err = json.Unmarshal(body, &tasks)
-		if err != nil {
-			slog.Error("Error while parsing body: ", err)
-			continue
-		}
-
-		for _, task := range tasks {
-			taskName := task[provider.TaskNameKey].(string)
-			difficulty := helper.ConvertToInt(task[provider.TaskValueKey].(float64))
-			duration := helper.ConvertToInt(task[provider.TaskDurationKey].(float64))
-			taskData := &valueobject.Task{
-				ID:         primitive.NewObjectID(),
-				ProviderID: provider.ID,
-				TaskName:   taskName,
-				Difficulty: difficulty,
-				Duration:   duration,
-				Intensity:  difficulty * duration,
-				CreatedAt:  time.Now(),
+			_, body, err := SendGetRequest(provider.Url)
+			if err != nil {
+				errCh <- err
+				return
 			}
-			err = s.taskService.AddTask(ctx, taskData)
+
+			var tasks []map[string]interface{}
+			if err := json.Unmarshal(body, &tasks); err != nil {
+				slog.Error("Error while parsing body: ", err)
+				errCh <- err
+				return
+			}
+
+			for _, task := range tasks {
+				taskName := task[provider.TaskNameKey].(string)
+				difficulty := helper.ConvertToInt(task[provider.TaskValueKey].(float64))
+				duration := helper.ConvertToInt(task[provider.TaskDurationKey].(float64))
+				taskData := &valueobject.Task{
+					ID:         primitive.NewObjectID(),
+					ProviderID: provider.ID,
+					Name:       taskName,
+					Difficulty: difficulty,
+					Duration:   duration,
+					Intensity:  difficulty * duration,
+				}
+
+				if err := s.taskService.AddTask(ctx, taskData); err != nil {
+					slog.Error("Error while adding task: ", err)
+					errCh <- err
+					return
+				}
+			}
+		}(&provider)
+	}
+
+	go func() {
+		wg.Wait()
+		close(errCh)
+	}()
+
+	for err := range errCh {
+		if err != nil {
+			return err
 		}
 	}
 

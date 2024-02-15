@@ -1,9 +1,9 @@
 package main
 
 import (
-	cmd "github.com/bulutcan99/weekly-task-scheduler/cmd/scheduler"
+	"github.com/bulutcan99/weekly-task-scheduler/cmd"
 )
 
 func main() {
-	cmd.Run()
+	cmd.Execute()
 }

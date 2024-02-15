@@ -19,7 +19,15 @@ func NewTaskService(repo repository.ITaskRepository) *TaskService {
 }
 
 func (ts *TaskService) AddTask(ctx context.Context, task *valueobject.Task) error {
-	return ts.repo.InsertTask(ctx, task)
+	filter := bson.M{
+		"provider_id": task.ProviderID,
+		"name":        task.Name,
+	}
+	res := ts.repo.CreateOrUpdate(ctx, filter, task)
+	if res.Err() != nil {
+		return res.Err()
+	}
+	return nil
 }
 
 func (ts *TaskService) GetTasks(ctx context.Context) ([]valueobject.Task, error) {

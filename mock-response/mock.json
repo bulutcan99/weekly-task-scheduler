@@ -1,0 +1,16 @@
+[
+  {
+    "name": "provider-1",
+    "task_value_key": "zorluk",
+    "task_duration_key": "sure",
+    "task_name_key": "id",
+    "url": "https://run.mocky.io/v3/27b47d79-f382-4dee-b4fe-a0976ceda9cd"
+  },
+  {
+    "name": "provider-2",
+    "task_value_key": "value",
+    "task_duration_key": "estimated_duration",
+    "task_name_key": "id",
+    "url": "https://run.mocky.io/v3/7b0ff222-7a9c-4c54-9396-0df58e289143"
+  }
+]

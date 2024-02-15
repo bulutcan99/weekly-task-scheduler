@@ -22,12 +22,15 @@ func NewTaskRepository(db *mongodb.Mongo, collectionName string) *TaskRepository
 	}
 }
 
-func (t *TaskRepository) InsertTask(ctx context.Context, task *valueobject.Task) error {
-	_, err := t.coll.InsertOne(ctx, task)
-	if err != nil {
-		return err
+func (t *TaskRepository) CreateOrUpdate(ctx context.Context, filter any, update any) *mongo.SingleResult {
+	update = bson.M{
+		"$set":         update,
+		"$setOnInsert": bson.M{},
 	}
-	return nil
+
+	upsertOption := options.FindOneAndUpdate().SetUpsert(true).SetReturnDocument(options.After)
+	res := t.coll.FindOneAndUpdate(ctx, filter, update, upsertOption)
+	return res
 }
 
 func (t *TaskRepository) GetTasks(ctx context.Context, opt *options.FindOptions) ([]valueobject.Task, error) {

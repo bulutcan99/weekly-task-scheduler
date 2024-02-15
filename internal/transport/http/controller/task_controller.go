@@ -3,10 +3,9 @@ package controller
 import (
 	"fmt"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
-	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/aggregate"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
-	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/valueobject"
 	"github.com/gofiber/fiber/v3"
+	"math"
 	"sync"
 )
 
@@ -29,11 +28,7 @@ func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
 
 }
 
-type TaskChQueue struct {
-	Id   int64
-	Task valueobject.Task
-}
-
+// Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
 func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 	developers := entity.NewDevelopers()
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
@@ -42,60 +37,36 @@ func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 			"message": "Error while getting tasks",
 		})
 	}
-	devTasks := make(map[string]*aggregate.DeveloperTask)
-
-	poolSize := len(developers)
-	taskQueue := make(chan TaskChQueue, len(tasks))
-	resultQueue := make(chan *aggregate.DeveloperTask, len(tasks))
+	weeks := 0
+	var mu sync.Mutex
 	var wg sync.WaitGroup
-	for i := 0; i < poolSize; i++ {
-		wg.Add(1)
-		go worker(&wg, i+1, &developers, taskQueue, resultQueue)
-	}
-
-	for i := 0; i < len(tasks); i++ {
-		taskQueue <- TaskChQueue{Id: int64(i), Task: tasks[i]}
-	}
-
-	close(taskQueue)
-	wg.Wait()
-	close(resultQueue)
-
-	for result := range resultQueue {
-		devTasks[result.Name] = result
-	}
-
-	return ctx.JSON(devTasks)
-}
-
-func worker(wg *sync.WaitGroup, id int, developers *[]entity.Developer, taskQueue <-chan TaskChQueue, resultQueue chan<- *aggregate.DeveloperTask) {
-	defer wg.Done()
-
-	for task := range taskQueue {
-		devTask := &aggregate.DeveloperTask{Name: fmt.Sprintf("Developer-%d", id), Weeks: 0}
-		scheduleTask(developers, task.Task, devTask)
-		resultQueue <- devTask
-	}
-}
-
-func scheduleTask(developers *[]entity.Developer, task valueobject.Task, devTask *aggregate.DeveloperTask) {
-	for _, dev := range *developers {
-		remainingWork := task.Difficulty - dev.WorkedHours
-		workThisWeek := min(remainingWork, dev.WeeklyTotalHours)
-		dev.WorkedHours += workThisWeek
-		dev.WeeklyTotalHours -= workThisWeek
-		task.Difficulty -= workThisWeek
-
-		devTask.Tasks = append(devTask.Tasks, valueobject.Task{TaskName: task.TaskName, Duration: task.Duration, Difficulty: workThisWeek})
-		devTask.Total += workThisWeek
-
-		if task.Difficulty == 0 {
+	for {
+		weeks++
+		for _, developer := range developers {
+			wg.Add(1)
+			go func(dev *entity.Developer) {
+				defer wg.Done()
+				mu.Lock()
+				defer mu.Unlock()
+				hoursLeft := dev.RemainingHours
+				for i := len(tasks) - 1; i >= 0; i-- {
+					task := tasks[i]
+					taskEfficiency := task.Difficulty * task.Duration
+					taskHours := math.Ceil(float64(taskEfficiency) / float64(dev.Speed))
+					if taskHours <= float64(hoursLeft) {
+						fmt.Printf("Week %d: Task %s assigned to %s\n", weeks, task.Name, dev.Name)
+						hoursLeft -= int(taskHours)
+						tasks = append(tasks[:i], tasks[i+1:]...)
+					}
+				}
+			}(&developer)
+		}
+		wg.Wait()
+		if len(tasks) == 0 {
 			break
 		}
 	}
 
-	if devTask.Total > 0 {
-		devTask.Weeks++
-		devTask.Remain = task.Difficulty
-	}
+	fmt.Printf("Total weeks to complete all tasks: %d\n", weeks)
+	return ctx.JSON(developers)
 }

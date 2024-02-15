@@ -7,26 +7,24 @@ import (
 )
 
 const (
-	TotalDuration = 5
+	TotalDuration = 45
 )
 
 type Developer struct {
-	ID               primitive.ObjectID `bson:"_id"`
-	Name             string             `bson:"name"`
-	Speed            int                `bson:"speed"`
-	WorkedHours      int                `bson:"worked_hours"`
-	WeeklyTotalHours int                `bson:"total_hours"`
+	ID             primitive.ObjectID `bson:"_id"`
+	Name           string             `bson:"name"`
+	Speed          int                `bson:"speed"`
+	RemainingHours int                `bson:"reamaning_hours"`
 }
 
 func NewDevelopers() []Developer {
 	devs := make([]Developer, 0)
 	for i := 0; i < 5; i++ {
 		devs = append(devs, Developer{
-			ID:               primitive.NewObjectID(),
-			Name:             "Developer-" + strconv.Itoa(i+1),
-			Speed:            i + 1,
-			WorkedHours:      0,
-			WeeklyTotalHours: TotalDuration,
+			ID:             primitive.NewObjectID(),
+			Name:           "Developer-" + strconv.Itoa(i+1),
+			Speed:          i + 1,
+			RemainingHours: TotalDuration,
 		})
 	}
 	sort.Slice(devs, func(i, j int) bool {
@@ -47,5 +45,5 @@ func (w *Developer) GetWeekleyTotalHours() int {
 }
 
 func (w *Developer) Work(duration int) {
-	w.WorkedHours += duration
+	w.RemainingHours -= duration
 }

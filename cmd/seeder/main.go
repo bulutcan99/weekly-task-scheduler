@@ -1,18 +1,17 @@
-package cmd
+package seeder
 
 import (
 	"context"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/application/dto"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/service"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/config"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/env"
-	fiber_go "github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/fiber"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/logger"
 	mongodb "github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/storage/mongo"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/storage/mongo/query"
 	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
-	"github.com/bulutcan99/weekly-task-scheduler/internal/transport/http/controller"
-	"github.com/bulutcan99/weekly-task-scheduler/internal/transport/http/router"
-	"github.com/gofiber/fiber/v3"
+	"github.com/goccy/go-json"
 	"log/slog"
 	"os"
 	"os/signal"
@@ -28,10 +27,10 @@ func Init() {
 	logger.Set()
 }
 
-func Run() {
+func Start() {
 	Init()
 	http_client.Init()
-	slog.Info("Starting server...")
+	slog.Info("Starting seeder...")
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 	cfg := config.New()
@@ -43,21 +42,46 @@ func Run() {
 	provider := query.NewProviderRepository(db, Env.ProviderCollection)
 	task := query.NewTaskRepository(db, Env.TaskCollection)
 	slog.Info("Repos initialized")
-
+	providers, err := getProviders(ctx)
+	if err != nil {
+		slog.Error("Error in getting providers")
+		panic(err)
+	}
 	providerService := service.NewProviderService(provider)
+	for _, provider := range providers {
+		err := providerService.AddProvider(ctx, &entity.Provider{
+			ID:              provider.ID,
+			Name:            provider.Name,
+			Url:             provider.Url,
+			TaskNameKey:     provider.TaskNameKey,
+			TaskValueKey:    provider.TaskValueKey,
+			TaskDurationKey: provider.TaskDurationKey,
+		})
+		if err != nil {
+			slog.Error("Error in adding provider")
+			panic(err)
+		}
+	}
 	taskService := service.NewTaskService(task)
 	slog.Info("Services initialized")
 
-	cfgFiber := fiber_go.ConfigFiber()
-	app := fiber.New(cfgFiber)
-	slog.Info("Fiber initialized")
-	router.ProviderRoute(app, controller.NewProviderController(providerService))
-	router.TaskRoute(app, controller.NewTaskController(taskService))
-	slog.Info("Routers initialized")
-	err := http_client.NewFetcher(providerService, taskService).Fetch(ctx)
+	err = http_client.NewFetcher(providerService, taskService).FetchTasksWithContext(ctx)
 	if err != nil {
 		slog.Error("Error in scheduler")
 		panic(err)
 	}
-	fiber_go.FiberListen(ctx, app)
+}
+
+func getProviders(ctx context.Context) ([]dto.Provider, error) {
+	data, err := os.ReadFile("mock-response/mock.json")
+	if err != nil {
+		return nil, err
+	}
+	var providers []dto.Provider
+	err = json.Unmarshal(data, &providers)
+	if err != nil {
+		return nil, err
+	}
+
+	return providers, nil
 }

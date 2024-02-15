@@ -35,7 +35,7 @@ func NewConnection(ctx context.Context, mongoConfig *config.Mongo) *Mongo {
 		client = cli
 	})
 
-	slog.Info("Connected to MongoDB successfully %s", url)
+	slog.Info("Connected to MongoDB successfully")
 
 	return &Mongo{
 		Client:   client,

@@ -5,9 +5,7 @@ import (
 )
 
 type DeveloperTask struct {
-	Name   string
-	Tasks  []valueobject.Task
-	Weeks  int
-	Total  int
-	Remain int
+	DeveloperName string
+	Tasks         *[]valueobject.Task
+	Weeks         int
 }
