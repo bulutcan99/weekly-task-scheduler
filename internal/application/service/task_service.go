@@ -25,7 +25,7 @@ func (ts *TaskService) AddTask(ctx context.Context, task *valueobject.Task) erro
 func (ts *TaskService) GetTasks(ctx context.Context) ([]valueobject.Task, error) {
 	opts := options.Find()
 	opts.SetSort(bson.M{
-		"difficulty": -1,
+		"intensity": -1,
 	})
 
 	tasks, err := ts.repo.GetTasks(ctx, opts)

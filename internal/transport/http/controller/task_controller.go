@@ -3,8 +3,11 @@ package controller
 import (
 	"fmt"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/aggregate"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/valueobject"
 	"github.com/gofiber/fiber/v3"
+	"sync"
 )
 
 type TaskController struct {
@@ -25,6 +28,12 @@ func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
 	return ctx.JSON(tasks)
 
 }
+
+type TaskChQueue struct {
+	Id   int64
+	Task valueobject.Task
+}
+
 func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 	developers := entity.NewDevelopers()
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
@@ -33,32 +42,60 @@ func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 			"message": "Error while getting tasks",
 		})
 	}
+	devTasks := make(map[string]*aggregate.DeveloperTask)
 
-	assignments := make(map[string]map[string][]string)
-	week := 1
+	poolSize := len(developers)
+	taskQueue := make(chan TaskChQueue, len(tasks))
+	resultQueue := make(chan *aggregate.DeveloperTask, len(tasks))
+	var wg sync.WaitGroup
+	for i := 0; i < poolSize; i++ {
+		wg.Add(1)
+		go worker(&wg, i+1, &developers, taskQueue, resultQueue)
+	}
 
-	for len(tasks) > 0 {
-		assignments[fmt.Sprintf("Week%d", week)] = make(map[string][]string)
-		// break will gonna take for the tasks loop
-		for key := len(tasks) - 1; key >= 0; key-- {
-			task := tasks[key]
-			for _, developer := range developers {
-				taskDurationForDeveloper := task.GetIntensity() / developer.Speed
-				if developer.AvailableHours >= taskDurationForDeveloper {
-					developer.AvailableHours -= taskDurationForDeveloper
-					assignments[fmt.Sprintf("Week%d", week)][developer.Name] = append(assignments[fmt.Sprintf("Week%d", week)][developer.Name], task.TaskName)
-					tasks = append(tasks[:key], tasks[key+1:]...)
-					break
-				}
-			}
+	for i := 0; i < len(tasks); i++ {
+		taskQueue <- TaskChQueue{Id: int64(i), Task: tasks[i]}
+	}
+
+	close(taskQueue)
+	wg.Wait()
+	close(resultQueue)
+
+	for result := range resultQueue {
+		devTasks[result.Name] = result
+	}
+
+	return ctx.JSON(devTasks)
+}
+
+func worker(wg *sync.WaitGroup, id int, developers *[]entity.Developer, taskQueue <-chan TaskChQueue, resultQueue chan<- *aggregate.DeveloperTask) {
+	defer wg.Done()
+
+	for task := range taskQueue {
+		devTask := &aggregate.DeveloperTask{Name: fmt.Sprintf("Developer-%d", id), Weeks: 0}
+		scheduleTask(developers, task.Task, devTask)
+		resultQueue <- devTask
+	}
+}
+
+func scheduleTask(developers *[]entity.Developer, task valueobject.Task, devTask *aggregate.DeveloperTask) {
+	for _, dev := range *developers {
+		remainingWork := task.Difficulty - dev.WorkedHours
+		workThisWeek := min(remainingWork, dev.WeeklyTotalHours)
+		dev.WorkedHours += workThisWeek
+		dev.WeeklyTotalHours -= workThisWeek
+		task.Difficulty -= workThisWeek
+
+		devTask.Tasks = append(devTask.Tasks, valueobject.Task{TaskName: task.TaskName, Duration: task.Duration, Difficulty: workThisWeek})
+		devTask.Total += workThisWeek
+
+		if task.Difficulty == 0 {
+			break
 		}
-
-		week++
 	}
 
-	data := map[string]interface{}{
-		"assignments": assignments,
-		"total_weeks": week,
+	if devTask.Total > 0 {
+		devTask.Weeks++
+		devTask.Remain = task.Difficulty
 	}
-	return ctx.JSON(data)
 }

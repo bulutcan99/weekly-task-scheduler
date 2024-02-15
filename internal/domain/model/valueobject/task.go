@@ -12,6 +12,7 @@ type Task struct {
 	TaskName      string             `bson:"task_name"`
 	Difficulty    int                `bson:"difficulty"`
 	Duration      int                `bson:"duration"`
+	Intensity     int                `bson:"intensity"`
 	CreatedAt     time.Time          `bson:"created_at"`
 }
 

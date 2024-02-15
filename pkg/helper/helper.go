@@ -6,13 +6,6 @@ import (
 	"strconv"
 )
 
-func MinValue(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
 func ConvertToFloat64(value any) float64 {
 	if value == nil {
 		return 0

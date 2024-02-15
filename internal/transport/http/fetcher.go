@@ -52,6 +52,7 @@ func (s *Fetcher) Fetch(ctx context.Context) error {
 				TaskName:   taskName,
 				Difficulty: difficulty,
 				Duration:   duration,
+				Intensity:  difficulty * duration,
 				CreatedAt:  time.Now(),
 			}
 			err = s.taskService.AddTask(ctx, taskData)

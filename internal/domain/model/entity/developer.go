@@ -7,14 +7,14 @@ import (
 )
 
 const (
-	TotalDuration = 45
+	TotalDuration = 5
 )
 
 type Developer struct {
 	ID               primitive.ObjectID `bson:"_id"`
 	Name             string             `bson:"name"`
 	Speed            int                `bson:"speed"`
-	AvailableHours   int                `bson:"available_hours"`
+	WorkedHours      int                `bson:"worked_hours"`
 	WeeklyTotalHours int                `bson:"total_hours"`
 }
 
@@ -23,9 +23,9 @@ func NewDevelopers() []Developer {
 	for i := 0; i < 5; i++ {
 		devs = append(devs, Developer{
 			ID:               primitive.NewObjectID(),
-			Name:             "Developer " + strconv.Itoa(i+1),
+			Name:             "Developer-" + strconv.Itoa(i+1),
 			Speed:            i + 1,
-			AvailableHours:   TotalDuration,
+			WorkedHours:      0,
 			WeeklyTotalHours: TotalDuration,
 		})
 	}
@@ -44,4 +44,8 @@ func (w *Developer) GetWeekleyTotalTasks() int {
 
 func (w *Developer) GetWeekleyTotalHours() int {
 	return TotalDuration
+}
+
+func (w *Developer) Work(duration int) {
+	w.WorkedHours += duration
 }
