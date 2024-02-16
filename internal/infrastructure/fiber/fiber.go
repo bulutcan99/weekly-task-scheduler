@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/env"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"log"
 	"log/slog"
 )

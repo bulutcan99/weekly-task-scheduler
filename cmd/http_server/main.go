@@ -2,6 +2,7 @@ package http_server
 
 import (
 	"context"
+	_ "github.com/bulutcan99/weekly-task-scheduler/docs"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/service"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/config"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/env"
@@ -12,7 +13,9 @@ import (
 	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/transport/http/controller"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/transport/http/router"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger"
+
 	"log/slog"
 	"os"
 	"os/signal"
@@ -28,6 +31,16 @@ func Init() {
 	logger.Set()
 }
 
+// @title Fiber Example API
+// @version 1.0
+// @description This is a sample swagger for Fiber
+// @termsOfService http://swagger.io/terms/
+// @contact.name API Support
+// @contact.email fiber@swagger.io
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+// @host localhost:8080
+// @BasePath /
 func Start() {
 	Init()
 	http_client.Init()
@@ -51,6 +64,11 @@ func Start() {
 
 	cfgFiber := fiber_go.ConfigFiber()
 	app := fiber.New(cfgFiber)
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello!")
+	})
+	app.Get("/swagger/*", swagger.HandlerDefault)
+
 	slog.Info("Fiber initialized")
 	router.ProviderRoute(app, controller.NewProviderController(providerService, taskService, fetcher))
 	router.TaskRoute(app, controller.NewTaskController(taskService))

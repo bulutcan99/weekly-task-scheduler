@@ -74,7 +74,7 @@ func Start() {
 }
 
 func getProviders(ctx context.Context) ([]dto.Provider, error) {
-	data, err := os.ReadFile("mock-response/mock.json")
+	data, err := os.ReadFile("pkg/mock-response/mock.json")
 	if err != nil {
 		return nil, err
 	}

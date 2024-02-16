@@ -1,0 +1,36 @@
+definitions:
+  valueobject.Task:
+    properties:
+      difficulty:
+        type: integer
+      duration:
+        type: integer
+      id:
+        type: string
+      intensity:
+        type: integer
+      name:
+        type: string
+      providerID:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/tasks:
+    get:
+      description: Belirtilen kullanıcının bilgilerini getirir.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/valueobject.Task'
+            type: array
+        "404":
+          description: Not Found
+          schema: {}
+      summary: Kullanıcının bilgilerini getirir
+swagger: "2.0"

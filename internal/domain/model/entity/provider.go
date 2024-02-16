@@ -7,10 +7,10 @@ import (
 
 type Provider struct {
 	ID              primitive.ObjectID `bson:"_id"`
-	Name            string             `bson:"name"`
-	TaskValueKey    string             `bson:"task_value_key"`
-	TaskDurationKey string             `bson:"task_duration_key"`
-	TaskNameKey     string             `bson:"task_name_key"`
-	Url             string             `bson:"url"`
+	Name            string             `bson:"name,required"`
+	TaskValueKey    string             `bson:"task_value_key,required"`
+	TaskDurationKey string             `bson:"task_duration_key,required"`
+	TaskNameKey     string             `bson:"task_name_key,required"`
+	Url             string             `bson:"url,required"`
 	Tasks           []valueobject.Task `bson:"tasks,omitempty"`
 }

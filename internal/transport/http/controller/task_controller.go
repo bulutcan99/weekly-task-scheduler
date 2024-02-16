@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"math"
 	"sync"
 )
@@ -17,7 +17,13 @@ func NewTaskController(taskService interfaces.ITaskService) *TaskController {
 	return &TaskController{TaskService: taskService}
 }
 
-func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
+// @Summary Get all the tasks
+// @Description Get all the tasks from the database
+// @Produce json
+// @Success 200 {object} []valueobject.Task
+// @Failure 404 {object} error
+// @Router /v1/tasks [get]
+func (tc *TaskController) GetTasks(ctx *fiber.Ctx) error {
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
 	if err != nil {
 		return ctx.Status(500).JSON(fiber.Map{
@@ -29,7 +35,7 @@ func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
 }
 
 // Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek, bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
-func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
+func (tc *TaskController) AssignTask(ctx *fiber.Ctx) error {
 	developers := entity.NewDevelopers()
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
 	"github.com/goccy/go-json"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -32,7 +32,7 @@ type addProviderRequest struct {
 	Url             string `json:"url"`
 }
 
-func (pc *ProviderController) AddProvider(ctx fiber.Ctx) error {
+func (pc *ProviderController) AddProvider(ctx *fiber.Ctx) error {
 	var request addProviderRequest
 	body := ctx.Body()
 	err := json.Unmarshal(body, &request)
@@ -63,7 +63,7 @@ func (pc *ProviderController) AddProvider(ctx fiber.Ctx) error {
 	return ctx.Status(fiber.StatusCreated).JSON(fiber.Map{"message": "provider added successfully"})
 }
 
-func (pc *ProviderController) GetProviders(ctx fiber.Ctx) error {
+func (pc *ProviderController) GetProviders(ctx *fiber.Ctx) error {
 	providers, err := pc.ProviderService.GetProviders(ctx.Context())
 	if err != nil {
 		if errors.Is(err, mongo.ErrNoDocuments) {
@@ -83,7 +83,7 @@ type updateProviderRequest struct {
 	Url             string `json:"url,omitempty"`
 }
 
-func (pc *ProviderController) UpdateProvider(ctx fiber.Ctx) error {
+func (pc *ProviderController) UpdateProvider(ctx *fiber.Ctx) error {
 	var request updateProviderRequest
 	body := ctx.Body()
 	err := json.Unmarshal(body, &request)
@@ -110,7 +110,7 @@ func (pc *ProviderController) UpdateProvider(ctx fiber.Ctx) error {
 	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"message": "provider updated successfully"})
 }
 
-func (pc *ProviderController) DeleteProviders(ctx fiber.Ctx) error {
+func (pc *ProviderController) DeleteProviders(ctx *fiber.Ctx) error {
 	name := ctx.Params("name")
 	err := pc.ProviderService.DeleteProviders(ctx.Context(), name)
 	if err != nil {
@@ -120,7 +120,7 @@ func (pc *ProviderController) DeleteProviders(ctx fiber.Ctx) error {
 	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"message": "provider deleted successfully"})
 }
 
-func (pc *ProviderController) GetProviderWithTasks(ctx fiber.Ctx) error {
+func (pc *ProviderController) GetProviderWithTasks(ctx *fiber.Ctx) error {
 	id := ctx.Params("id")
 	provider, err := pc.ProviderService.GetProviderWithTasks(ctx.Context(), id)
 	if err != nil {

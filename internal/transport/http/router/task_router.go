@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/transport/http/controller"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 )
 
 func TaskRoute(r fiber.Router, task *controller.TaskController) {

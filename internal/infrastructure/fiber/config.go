@@ -3,7 +3,7 @@ package fiber_go
 import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/env"
 	go_json "github.com/goccy/go-json"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 	"time"
 )
 
