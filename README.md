@@ -25,14 +25,14 @@ To get a local copy up and running follow these simple steps.
 -   Clone the repository
 -   Copy `.env.example` to `.env` and fill in your credentials
 -   Run `make docker-install`
--   Run ‘make run-seeder’ // for seed the two mock json datas
--   Run ‘make run-server’
+-   Run `make run-seeder` // for seed the two mock json datas
+-   Run `make run-server`
 
 
 ## Usage
 
 -   Go to `http://localhost:8080/swagger/index.html#/` main page for swagger
--   Click on providers section to see and add providers
+-   Click on post provider endpoint to add providers
 -   Example provider json responses are :
 
     -   `https://run.mocky.io/v3/27b47d79-f382-4dee-b4fe-a0976ceda9cd` for provider 1
