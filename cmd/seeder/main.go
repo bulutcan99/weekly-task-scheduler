@@ -38,7 +38,6 @@ func Start() {
 	db := mongodb.NewConnection(ctx, cfg.Mongo)
 	defer db.Close()
 	slog.Info("Database connected!")
-
 	provider := query.NewProviderRepository(db, Env.ProviderCollection)
 	task := query.NewTaskRepository(db, Env.TaskCollection)
 	slog.Info("Repos initialized")

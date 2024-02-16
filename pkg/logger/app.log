@@ -2472,3 +2472,11 @@
 {"time":"2024-02-16T13:30:04.008589+03:00","level":"INFO","msg":"Routers initialized"}
 {"time":"2024-02-16T13:30:06.151608+03:00","level":"INFO","msg":"Server is shutting down..."}
 {"time":"2024-02-16T13:30:06.152465+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T13:51:20.175237+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T13:51:20.175722+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T13:51:20.184487+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T13:51:20.184512+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T13:51:20.184538+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T13:51:20.201109+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T13:51:20.506403+03:00","level":"INFO","msg":"Seeder finished"}
+{"time":"2024-02-16T13:51:20.507089+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}

@@ -64,3 +64,17 @@ func ConvertToInt(value any) int {
 		return 0
 	}
 }
+
+func Contains[T comparable](elems []T, v T, fn func(value T, element T) bool) bool {
+	if fn == nil {
+		fn = func(value T, element T) bool {
+			return value == element
+		}
+	}
+	for _, s := range elems {
+		if fn(v, s) {
+			return true
+		}
+	}
+	return false
+}
