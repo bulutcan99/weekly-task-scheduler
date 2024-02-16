@@ -8,5 +8,5 @@ import (
 func TaskRoute(r fiber.Router, task *controller.TaskController) {
 	route := r.Group("/v1")
 	route.Get("/tasks", task.GetTasks)
-	route.Post("/assigne-task", task.AssignTask)
+	route.Post("/task", task.AssignTask)
 }

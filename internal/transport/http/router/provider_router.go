@@ -6,10 +6,10 @@ import (
 )
 
 func ProviderRoute(r fiber.Router, provider *controller.ProviderController) {
-	route := r.Group("/v1/provider")
-	route.Get("/", provider.GetProviders)
-	route.Post("/add", provider.AddProvider)
-	route.Put("/update", provider.UpdateProvider)
-	route.Delete("/delete/:name", provider.DeleteProviders)
-	route.Get("/:id", provider.GetProviderWithTasks)
+	route := r.Group("/v1")
+	route.Get("/providers", provider.GetProviders)
+	route.Post("/provider", provider.AddProvider)
+	route.Put("/provider", provider.UpdateProvider)
+	route.Delete("/provider/:name", provider.DeleteProviders)
+	route.Get("/provider/:id", provider.GetProviderWithTasks)
 }

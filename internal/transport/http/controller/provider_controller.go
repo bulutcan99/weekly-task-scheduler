@@ -2,7 +2,10 @@ package controller
 
 import (
 	"errors"
+	"fmt"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/application/dto"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/application/mapper"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
 	"github.com/goccy/go-json"
@@ -24,23 +27,22 @@ func NewProviderController(providerService interfaces.IProviderService, taskServ
 	}
 }
 
-type addProviderRequest struct {
-	Name            string `json:"name"`
-	TaskValueKey    string `json:"task_value_key"`
-	TaskDurationKey string `json:"task_duration_key"`
-	TaskNameKey     string `json:"task_name_key"`
-	Url             string `json:"url"`
-}
-
+// @Summary Add a new provider
+// @Description Add a new provider to add tasks
+// @ID insert-provider
+// @Accept json
+// @Produce json
+// @Param request body dto.AddProviderRequest true "Add provider request"
+// @Success 201 {object} dto.SuccessResponse
+// @Failure 400 {object} dto.ErrorResponse
+// @Failure 500 {object} dto.ErrorResponse
+// @Router /v1/provider [post]
 func (pc *ProviderController) AddProvider(ctx *fiber.Ctx) error {
-	var request addProviderRequest
+	var request dto.AddProviderRequest
 	body := ctx.Body()
 	err := json.Unmarshal(body, &request)
 	if err != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": true,
-			"msg":   "error while trying to parse body",
-		})
+		return ctx.Status(fiber.StatusBadRequest).JSON(dto.ErrorResponse{Error: true, Msg: "Error while trying to parse body"})
 	}
 
 	provider := &entity.Provider{
@@ -53,26 +55,37 @@ func (pc *ProviderController) AddProvider(ctx *fiber.Ctx) error {
 
 	err = pc.ProviderService.AddProvider(ctx.Context(), provider)
 	if err != nil {
-		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+		return ctx.Status(fiber.StatusInternalServerError).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})
+
 	}
 
 	err = pc.HttpClient.FetchTasks(ctx.Context(), provider)
 	if err != nil {
-		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+		return ctx.Status(fiber.StatusInternalServerError).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})
+
 	}
-	return ctx.Status(fiber.StatusCreated).JSON(fiber.Map{"message": "provider added successfully"})
+	return ctx.Status(fiber.StatusCreated).JSON(dto.SuccessResponse{Message: "Provider added successfully"})
 }
 
+// @Summary Get all the providers
+// @Description Get all the providers from the database
+// @ID get-providers
+// @Produce json
+// @Success 200 {object} []dto.Provider
+// @Failure 400 {object} dto.ErrorResponse
+// @Failure 500 {object} dto.ErrorResponse
+// @Router /v1/providers [get]
 func (pc *ProviderController) GetProviders(ctx *fiber.Ctx) error {
 	providers, err := pc.ProviderService.GetProviders(ctx.Context())
 	if err != nil {
 		if errors.Is(err, mongo.ErrNoDocuments) {
-			return ctx.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": err.Error()})
+			return ctx.Status(fiber.StatusNotFound).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})
 		}
-		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+		return ctx.Status(fiber.StatusInternalServerError).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})
 	}
-
-	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"data": providers})
+	providerJson := mapper.GetProviderJson(providers)
+	fmt.Println(providerJson)
+	return ctx.Status(fiber.StatusOK).JSON(providerJson)
 }
 
 type updateProviderRequest struct {

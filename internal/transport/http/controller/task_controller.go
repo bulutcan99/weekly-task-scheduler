@@ -2,6 +2,7 @@ package controller
 
 import (
 	"fmt"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/application/dto"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	"github.com/gofiber/fiber/v2"
@@ -18,16 +19,19 @@ func NewTaskController(taskService interfaces.ITaskService) *TaskController {
 }
 
 // @Summary Get all the tasks
-// @Description Get all the tasks from the database
+// @Description Get all the task from the database
+// @ID get-tasks
 // @Produce json
-// @Success 200 {object} []valueobject.Task
-// @Failure 404 {object} error
-// @Router /v1/tasks [get]
+// @Success 200 {object} []dto.Task
+// @Failure 400 {object} dto.ErrorResponse
+// @Failure 500 {object} dto.ErrorResponse
+// @Router /v1/providers [get]
 func (tc *TaskController) GetTasks(ctx *fiber.Ctx) error {
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
 	if err != nil {
-		return ctx.Status(500).JSON(fiber.Map{
-			"message": "Error while getting tasks",
+		return ctx.Status(500).JSON(dto.ErrorResponse{
+			Error: true,
+			Msg:   "Error while getting tasks",
 		})
 	}
 	return ctx.JSON(tasks)

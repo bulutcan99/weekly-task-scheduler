@@ -1,4 +1,48 @@
 definitions:
+  dto.AddProviderRequest:
+    properties:
+      name:
+        type: string
+      task_duration_key:
+        type: string
+      task_name_key:
+        type: string
+      task_value_key:
+        type: string
+      url:
+        type: string
+    type: object
+  dto.ErrorResponse:
+    properties:
+      error:
+        type: boolean
+      msg:
+        type: string
+    type: object
+  dto.Provider:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      task_duration_key:
+        type: string
+      task_name_key:
+        type: string
+      task_value_key:
+        type: string
+      tasks:
+        items:
+          $ref: '#/definitions/valueobject.Task'
+        type: array
+      url:
+        type: string
+    type: object
+  dto.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
   valueobject.Task:
     properties:
       difficulty:
@@ -17,9 +61,60 @@ definitions:
 info:
   contact: {}
 paths:
+  /v1/provider/add:
+    post:
+      consumes:
+      - application/json
+      description: Add a new provider to add tasks
+      operationId: insert-provider
+      parameters:
+      - description: Add provider request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AddProviderRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+      summary: Add a new provider
+  /v1/providers:
+    get:
+      description: Get all the providers from the database
+      operationId: get-providers
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.Provider'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+      summary: Get all the providers
   /v1/tasks:
     get:
-      description: Belirtilen kullanıcının bilgilerini getirir.
+      description: Get all the tasks from the database
       produces:
       - application/json
       responses:
@@ -32,5 +127,5 @@ paths:
         "404":
           description: Not Found
           schema: {}
-      summary: Kullanıcının bilgilerini getirir
+      summary: Get all the tasks
 swagger: "2.0"

@@ -15,13 +15,90 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/v1/tasks": {
-            "get": {
-                "description": "Belirtilen kullanıcının bilgilerini getirir.",
+        "/v1/provider/add": {
+            "post": {
+                "description": "Add a new provider to add tasks",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Kullanıcının bilgilerini getirir",
+                "summary": "Add a new provider",
+                "operationId": "insert-provider",
+                "parameters": [
+                    {
+                        "description": "Add provider request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dto.AddProviderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/dto.SuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/providers": {
+            "get": {
+                "description": "Get all the providers from the database",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get all the providers",
+                "operationId": "get-providers",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/dto.Provider"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/tasks": {
+            "get": {
+                "description": "Get all the tasks from the database",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get all the tasks",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -41,6 +118,74 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "dto.AddProviderRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "task_duration_key": {
+                    "type": "string"
+                },
+                "task_name_key": {
+                    "type": "string"
+                },
+                "task_value_key": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "boolean"
+                },
+                "msg": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.Provider": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "task_duration_key": {
+                    "type": "string"
+                },
+                "task_name_key": {
+                    "type": "string"
+                },
+                "task_value_key": {
+                    "type": "string"
+                },
+                "tasks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/valueobject.Task"
+                    }
+                },
+                "url": {
+                    "type": "string"
+                }
+            }
+        },
+        "dto.SuccessResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "valueobject.Task": {
             "type": "object",
             "properties": {
