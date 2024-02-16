@@ -3,7 +3,6 @@ package service
 import (
 	"context"
 	"errors"
-
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/repository"
 	"go.mongodb.org/mongo-driver/bson/primitive"

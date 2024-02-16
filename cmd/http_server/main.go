@@ -46,12 +46,13 @@ func Start() {
 
 	providerService := service.NewProviderService(provider)
 	taskService := service.NewTaskService(task)
+	fetcher := http_client.NewFetcher(providerService, taskService)
 	slog.Info("Services initialized")
 
 	cfgFiber := fiber_go.ConfigFiber()
 	app := fiber.New(cfgFiber)
 	slog.Info("Fiber initialized")
-	router.ProviderRoute(app, controller.NewProviderController(providerService))
+	router.ProviderRoute(app, controller.NewProviderController(providerService, taskService, fetcher))
 	router.TaskRoute(app, controller.NewTaskController(taskService))
 	slog.Info("Routers initialized")
 	fiber_go.FiberListen(ctx, app)

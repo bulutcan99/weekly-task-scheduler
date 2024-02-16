@@ -48,6 +48,8 @@ func Start() {
 		panic(err)
 	}
 	providerService := service.NewProviderService(provider)
+	taskService := service.NewTaskService(task)
+	fetcher := http_client.NewFetcher(providerService, taskService)
 	for _, provider := range providers {
 		err := providerService.AddProvider(ctx, &entity.Provider{
 			ID:              provider.ID,
@@ -62,14 +64,14 @@ func Start() {
 			panic(err)
 		}
 	}
-	taskService := service.NewTaskService(task)
 	slog.Info("Services initialized")
 
-	err = http_client.NewFetcher(providerService, taskService).FetchTasksWithContext(ctx)
+	err = fetcher.FetchTasksFromMongo(ctx)
 	if err != nil {
 		slog.Error("Error in scheduler")
 		panic(err)
 	}
+	slog.Info("Seeder finished")
 }
 
 func getProviders(ctx context.Context) ([]dto.Provider, error) {

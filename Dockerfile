@@ -11,7 +11,7 @@ COPY . .
 RUN go mod download
 
 # build binary
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/main main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/main cmd/seeder/main.go
 
 # final stage
 FROM alpine:3.18 AS final

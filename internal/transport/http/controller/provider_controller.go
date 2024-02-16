@@ -4,6 +4,7 @@ import (
 	"errors"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
+	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
 	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v3"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -11,10 +12,16 @@ import (
 
 type ProviderController struct {
 	ProviderService interfaces.IProviderService
+	TaskService     interfaces.ITaskService
+	HttpClient      *http_client.Fetcher
 }
 
-func NewProviderController(providerService interfaces.IProviderService) *ProviderController {
-	return &ProviderController{ProviderService: providerService}
+func NewProviderController(providerService interfaces.IProviderService, taskService interfaces.ITaskService, fetcher *http_client.Fetcher) *ProviderController {
+	return &ProviderController{
+		ProviderService: providerService,
+		TaskService:     taskService,
+		HttpClient:      fetcher,
+	}
 }
 
 type addProviderRequest struct {
@@ -49,6 +56,10 @@ func (pc *ProviderController) AddProvider(ctx fiber.Ctx) error {
 		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
 	}
 
+	err = pc.HttpClient.FetchTasks(ctx.Context(), provider)
+	if err != nil {
+		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+	}
 	return ctx.Status(fiber.StatusCreated).JSON(fiber.Map{"message": "provider added successfully"})
 }
 

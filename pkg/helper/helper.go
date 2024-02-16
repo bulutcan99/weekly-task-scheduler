@@ -35,7 +35,7 @@ func ConvertToFloat64(value any) float64 {
 		return 0
 	}
 }
-func ConvertToInt(value interface{}) int {
+func ConvertToInt(value any) int {
 	if value == nil {
 		return 0
 	}

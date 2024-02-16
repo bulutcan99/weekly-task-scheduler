@@ -28,7 +28,7 @@ func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
 
 }
 
-// Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
+// Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek, mongo coleksiyonlari direkt otomatik ekleme, bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
 func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 	developers := entity.NewDevelopers()
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
@@ -54,7 +54,8 @@ func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 					taskEfficiency := task.Difficulty * task.Duration
 					taskHours := math.Ceil(float64(taskEfficiency) / float64(dev.Speed))
 					if taskHours <= float64(hoursLeft) {
-						fmt.Printf("Week %d: Task %s assigned to %s\n", weeks, task.Name, dev.Name)
+						fmt.Printf("Week %d\n", weeks)
+						dev.Work(task.Name)
 						hoursLeft -= int(taskHours)
 						tasks = append(tasks[:i], tasks[i+1:]...)
 					}

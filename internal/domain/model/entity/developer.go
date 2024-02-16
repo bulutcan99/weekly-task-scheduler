@@ -1,7 +1,9 @@
 package entity
 
 import (
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"log/slog"
 	"sort"
 	"strconv"
 )
@@ -44,6 +46,7 @@ func (w *Developer) GetWeekleyTotalHours() int {
 	return TotalDuration
 }
 
-func (w *Developer) Work(duration int) {
-	w.RemainingHours -= duration
+func (w *Developer) Work(taskName string) {
+	assign := fmt.Sprintf("Task %s assigned to %s\n", taskName, w.Name)
+	slog.Info(assign)
 }
