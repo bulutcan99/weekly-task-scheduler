@@ -3056,3 +3056,53 @@
 {"time":"2024-02-16T23:37:50.848251+03:00","level":"INFO","msg":"Routers initialized"}
 {"time":"2024-02-16T23:38:42.406366+03:00","level":"INFO","msg":"Server is shutting down..."}
 {"time":"2024-02-16T23:38:42.408456+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:39:24.816779+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:39:24.817214+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:39:24.827939+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:39:24.827963+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:39:24.827973+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:39:24.829454+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:39:26.775551+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-16T23:39:26.775652+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-16T23:39:26.775737+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection() error occurred during connection handshake: dial tcp: lookup localhost: operation was canceled"}
+{"time":"2024-02-16T23:39:26.775847+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-3]) incomplete read of message header: read tcp [::1]:54801->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-16T23:39:26.775942+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:41:07.02915+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:41:07.029605+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:41:07.03709+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:41:07.037131+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:41:07.037146+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:41:07.03881+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:41:07.253375+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-16T23:41:07.253456+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-16T23:41:07.253583+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection() error occurred during connection handshake:  connection(localhost:27017[-6]) incomplete read of message header: context canceled: connection(localhost:27017[-6]) incomplete read of message header: context canceled"}
+{"time":"2024-02-16T23:41:07.253714+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-3]) incomplete read of message header: read tcp [::1]:54814->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-16T23:41:07.253782+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:41:07.253832+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"client is disconnected"}
+{"time":"2024-02-16T23:41:48.326529+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:41:48.327491+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:41:48.338243+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:41:48.338976+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:41:48.338985+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:41:48.353582+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:41:48.566495+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-16T23:41:48.566616+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-16T23:41:48.566753+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-3]) incomplete read of message header: read tcp [::1]:54829->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-16T23:41:48.566798+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:42:14.389154+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:42:14.389717+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:42:14.398531+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:42:14.398562+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:42:14.398577+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:42:14.400331+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:42:14.600104+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-16T23:42:14.600295+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-16T23:42:14.601705+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-16T23:42:14.602828+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:43:23.583077+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:43:23.58365+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:43:23.592369+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:43:23.592398+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:43:23.592411+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:43:23.593388+03:00","level":"INFO","msg":"Provider's url data already exists"}
+{"time":"2024-02-16T23:43:23.593881+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}

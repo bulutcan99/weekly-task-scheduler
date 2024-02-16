@@ -50,6 +50,11 @@ func Start() {
 	taskService := service.NewTaskService(task)
 	fetcher := http_client.NewFetcher(providerService, taskService)
 	for _, provider := range providers {
+		providerMongo, _ := providerService.GetProviderByUrl(ctx, provider.Url)
+		if providerMongo != nil {
+			slog.Info("Provider's url data already exists. Please check your mock data.")
+			return
+		}
 		err = providerService.AddProvider(ctx, &entity.Provider{
 			ID:              provider.ID,
 			Name:            provider.Name,
@@ -64,7 +69,6 @@ func Start() {
 		}
 	}
 	slog.Info("Services initialized")
-
 	err = fetcher.FetchTasksFromMongo(ctx)
 	if err != nil {
 		slog.Error("Error in scheduler")
