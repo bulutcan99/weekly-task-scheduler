@@ -1,4 +1,15 @@
 definitions:
+  aggregate.DeveloperTask:
+    properties:
+      developer:
+        $ref: '#/definitions/entity.Developer'
+      tasks:
+        items:
+          $ref: '#/definitions/valueobject.Task'
+        type: array
+      week:
+        type: integer
+    type: object
   dto.AddProviderRequest:
     properties:
       name:
@@ -43,6 +54,26 @@ definitions:
       message:
         type: string
     type: object
+  dto.Task:
+    properties:
+      difficulty:
+        type: integer
+      duration:
+        type: integer
+      id:
+        type: string
+    type: object
+  entity.Developer:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      remainingHours:
+        type: integer
+      speed:
+        type: integer
+    type: object
   valueobject.Task:
     properties:
       difficulty:
@@ -61,7 +92,7 @@ definitions:
 info:
   contact: {}
 paths:
-  /v1/provider/add:
+  /v1/provider:
     post:
       consumes:
       - application/json
@@ -92,8 +123,8 @@ paths:
       summary: Add a new provider
   /v1/providers:
     get:
-      description: Get all the providers from the database
-      operationId: get-providers
+      description: Get all the task from the database
+      operationId: get-tasks
       produces:
       - application/json
       responses:
@@ -101,7 +132,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/dto.Provider'
+              $ref: '#/definitions/dto.Task'
             type: array
         "400":
           description: Bad Request
@@ -111,21 +142,27 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/dto.ErrorResponse'
-      summary: Get all the providers
-  /v1/tasks:
-    get:
-      description: Get all the tasks from the database
+      summary: Get all the tasks
+  /v1/task:
+    post:
+      description: Assign tasks to developers
+      operationId: assign-tasks
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            items:
-              $ref: '#/definitions/valueobject.Task'
-            type: array
-        "404":
-          description: Not Found
-          schema: {}
-      summary: Get all the tasks
+            additionalProperties:
+              $ref: '#/definitions/aggregate.DeveloperTask'
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+      summary: Assign tasks to developers
 swagger: "2.0"

@@ -8,4 +8,5 @@ import (
 type DeveloperTask struct {
 	Developer *entity.Developer
 	Tasks     *[]valueobject.Task
+	Week      int
 }

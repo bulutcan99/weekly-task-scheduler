@@ -47,6 +47,6 @@ func (w *Developer) GetWeekleyTotalHours() int {
 }
 
 func (w *Developer) Work(taskName string) {
-	assign := fmt.Sprintf("Task %s assigned to %s\n", taskName, w.Name)
-	slog.Info(assign)
+	assign := fmt.Sprintf("Task %s assigned to %s", taskName, w.Name)
+	slog.Debug(assign)
 }

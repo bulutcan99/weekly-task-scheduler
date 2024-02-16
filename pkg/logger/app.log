@@ -2732,3 +2732,254 @@
 {"time":"2024-02-16T19:36:11.694764+03:00","level":"INFO","msg":"Routers initialized"}
 {"time":"2024-02-16T19:44:14.404174+03:00","level":"INFO","msg":"Server is shutting down..."}
 {"time":"2024-02-16T19:44:14.404581+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T19:52:44.077298+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T19:52:44.077826+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T19:52:44.089264+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T19:52:44.089295+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T19:52:44.089311+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T19:52:44.08932+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T19:52:44.089392+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T19:52:44.089433+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T19:53:21.752204+03:00","level":"INFO","msg":"Task IT Task 61 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753425+03:00","level":"INFO","msg":"Task IT Task 50 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753476+03:00","level":"INFO","msg":"Task IT Task 28 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753509+03:00","level":"INFO","msg":"Task IT Task 6 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753538+03:00","level":"INFO","msg":"Task IT Task 21 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753559+03:00","level":"INFO","msg":"Task IT Task 62 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753581+03:00","level":"INFO","msg":"Task IT Task 11 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753602+03:00","level":"INFO","msg":"Task IT Task 9 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753618+03:00","level":"INFO","msg":"Task IT Task 58 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.75364+03:00","level":"INFO","msg":"Task IT Task 49 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753658+03:00","level":"INFO","msg":"Task IT Task 59 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753674+03:00","level":"INFO","msg":"Task IT Task 63 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.75369+03:00","level":"INFO","msg":"Task IT Task 53 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753706+03:00","level":"INFO","msg":"Task IT Task 46 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753725+03:00","level":"INFO","msg":"Task IT Task 51 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753742+03:00","level":"INFO","msg":"Task IT Task 37 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753758+03:00","level":"INFO","msg":"Task IT Task 36 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.753773+03:00","level":"INFO","msg":"Task IT Task 35 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.754112+03:00","level":"INFO","msg":"Task IT Task 32 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.754144+03:00","level":"INFO","msg":"Task IT Task 31 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.754163+03:00","level":"INFO","msg":"Task IT Task 14 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.75418+03:00","level":"INFO","msg":"Task IT Task 60 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.754195+03:00","level":"INFO","msg":"Task IT Task 48 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.754228+03:00","level":"INFO","msg":"Task IT Task 40 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754252+03:00","level":"INFO","msg":"Task IT Task 33 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754269+03:00","level":"INFO","msg":"Task IT Task 24 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754284+03:00","level":"INFO","msg":"Task IT Task 5 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.7543+03:00","level":"INFO","msg":"Task IT Task 23 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754577+03:00","level":"INFO","msg":"Task IT Task 13 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754596+03:00","level":"INFO","msg":"Task IT Task 4 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754612+03:00","level":"INFO","msg":"Task IT Task 47 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754627+03:00","level":"INFO","msg":"Task IT Task 3 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754643+03:00","level":"INFO","msg":"Task IT Task 0 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754658+03:00","level":"INFO","msg":"Task IT Task 29 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.754684+03:00","level":"INFO","msg":"Task IT Task 22 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:53:21.754706+03:00","level":"INFO","msg":"Task IT Task 16 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:53:21.75473+03:00","level":"INFO","msg":"Task IT Task 10 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.754751+03:00","level":"INFO","msg":"Task IT Task 65 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.755123+03:00","level":"INFO","msg":"Task IT Task 57 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.755142+03:00","level":"INFO","msg":"Task IT Task 18 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.755159+03:00","level":"INFO","msg":"Task IT Task 41 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.755185+03:00","level":"INFO","msg":"Task IT Task 26 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:53:21.755206+03:00","level":"INFO","msg":"Task IT Task 19 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:53:21.755222+03:00","level":"INFO","msg":"Task IT Task 15 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:53:21.755257+03:00","level":"INFO","msg":"Task IT Task 8 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:53:21.755285+03:00","level":"INFO","msg":"Task IT Task 1 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755305+03:00","level":"INFO","msg":"Task IT Task 25 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755321+03:00","level":"INFO","msg":"Task IT Task 27 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755752+03:00","level":"INFO","msg":"Task IT Task 66 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755777+03:00","level":"INFO","msg":"Task IT Task 56 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755794+03:00","level":"INFO","msg":"Task IT Task 43 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.755874+03:00","level":"INFO","msg":"Task IT Task 34 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.755905+03:00","level":"INFO","msg":"Task IT Task 7 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.755923+03:00","level":"INFO","msg":"Task IT Task 2 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.75594+03:00","level":"INFO","msg":"Task IT Task 52 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.755955+03:00","level":"INFO","msg":"Task IT Task 20 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.755971+03:00","level":"INFO","msg":"Task IT Task 17 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.755996+03:00","level":"INFO","msg":"Task IT Task 54 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.75628+03:00","level":"INFO","msg":"Task IT Task 44 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.7563+03:00","level":"INFO","msg":"Task IT Task 12 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:53:21.756326+03:00","level":"INFO","msg":"Task IT Task 45 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:53:21.75636+03:00","level":"INFO","msg":"Task IT Task 30 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:53:21.756388+03:00","level":"INFO","msg":"Task IT Task 64 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.75641+03:00","level":"INFO","msg":"Task IT Task 55 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.756428+03:00","level":"INFO","msg":"Task IT Task 39 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:53:21.75645+03:00","level":"INFO","msg":"Task IT Task 42 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:53:21.75647+03:00","level":"INFO","msg":"Task IT Task 38 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:57:58.494112+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T19:57:58.494998+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T19:59:23.370933+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T19:59:23.371479+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T19:59:23.38455+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T19:59:23.384591+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T19:59:23.384608+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T19:59:23.384617+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T19:59:23.384688+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T19:59:23.384805+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T19:59:25.19889+03:00","level":"INFO","msg":"Task IT Task 61 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199023+03:00","level":"INFO","msg":"Task IT Task 50 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199049+03:00","level":"INFO","msg":"Task IT Task 28 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199077+03:00","level":"INFO","msg":"Task IT Task 6 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199097+03:00","level":"INFO","msg":"Task IT Task 21 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199113+03:00","level":"INFO","msg":"Task IT Task 62 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199131+03:00","level":"INFO","msg":"Task IT Task 11 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199145+03:00","level":"INFO","msg":"Task IT Task 9 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199159+03:00","level":"INFO","msg":"Task IT Task 58 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199177+03:00","level":"INFO","msg":"Task IT Task 49 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199215+03:00","level":"INFO","msg":"Task IT Task 59 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199245+03:00","level":"INFO","msg":"Task IT Task 63 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199262+03:00","level":"INFO","msg":"Task IT Task 53 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199277+03:00","level":"INFO","msg":"Task IT Task 46 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199291+03:00","level":"INFO","msg":"Task IT Task 51 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199305+03:00","level":"INFO","msg":"Task IT Task 37 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199319+03:00","level":"INFO","msg":"Task IT Task 36 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199333+03:00","level":"INFO","msg":"Task IT Task 35 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.19935+03:00","level":"INFO","msg":"Task IT Task 32 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199364+03:00","level":"INFO","msg":"Task IT Task 31 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199716+03:00","level":"INFO","msg":"Task IT Task 14 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199736+03:00","level":"INFO","msg":"Task IT Task 60 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.19975+03:00","level":"INFO","msg":"Task IT Task 48 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.199777+03:00","level":"INFO","msg":"Task IT Task 40 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:59:25.19981+03:00","level":"INFO","msg":"Task IT Task 33 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:59:25.199824+03:00","level":"INFO","msg":"Task IT Task 24 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:59:25.199846+03:00","level":"INFO","msg":"Task IT Task 5 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.199894+03:00","level":"INFO","msg":"Task IT Task 23 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.199912+03:00","level":"INFO","msg":"Task IT Task 13 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.199928+03:00","level":"INFO","msg":"Task IT Task 4 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200154+03:00","level":"INFO","msg":"Task IT Task 47 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200171+03:00","level":"INFO","msg":"Task IT Task 3 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200189+03:00","level":"INFO","msg":"Task IT Task 0 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200203+03:00","level":"INFO","msg":"Task IT Task 29 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200216+03:00","level":"INFO","msg":"Task IT Task 22 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200235+03:00","level":"INFO","msg":"Task IT Task 16 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.200259+03:00","level":"INFO","msg":"Task IT Task 10 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.200281+03:00","level":"INFO","msg":"Task IT Task 65 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.200296+03:00","level":"INFO","msg":"Task IT Task 57 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.20031+03:00","level":"INFO","msg":"Task IT Task 18 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.200624+03:00","level":"INFO","msg":"Task IT Task 41 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.200656+03:00","level":"INFO","msg":"Task IT Task 26 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:59:25.200677+03:00","level":"INFO","msg":"Task IT Task 19 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:59:25.200692+03:00","level":"INFO","msg":"Task IT Task 15 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:59:25.200722+03:00","level":"INFO","msg":"Task IT Task 8 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:59:25.200744+03:00","level":"INFO","msg":"Task IT Task 1 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.200763+03:00","level":"INFO","msg":"Task IT Task 25 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.20079+03:00","level":"INFO","msg":"Task IT Task 27 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.20081+03:00","level":"INFO","msg":"Task IT Task 66 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.200825+03:00","level":"INFO","msg":"Task IT Task 56 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.201207+03:00","level":"INFO","msg":"Task IT Task 43 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.201227+03:00","level":"INFO","msg":"Task IT Task 34 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.201251+03:00","level":"INFO","msg":"Task IT Task 7 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.201269+03:00","level":"INFO","msg":"Task IT Task 2 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.201284+03:00","level":"INFO","msg":"Task IT Task 52 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.201297+03:00","level":"INFO","msg":"Task IT Task 20 assigned to Developer-3\n"}
+{"time":"2024-02-16T19:59:25.201316+03:00","level":"INFO","msg":"Task IT Task 17 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201334+03:00","level":"INFO","msg":"Task IT Task 54 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201347+03:00","level":"INFO","msg":"Task IT Task 44 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201361+03:00","level":"INFO","msg":"Task IT Task 12 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201635+03:00","level":"INFO","msg":"Task IT Task 45 assigned to Developer-2\n"}
+{"time":"2024-02-16T19:59:25.201667+03:00","level":"INFO","msg":"Task IT Task 30 assigned to Developer-1\n"}
+{"time":"2024-02-16T19:59:25.201692+03:00","level":"INFO","msg":"Task IT Task 64 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.20171+03:00","level":"INFO","msg":"Task IT Task 55 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201726+03:00","level":"INFO","msg":"Task IT Task 39 assigned to Developer-4\n"}
+{"time":"2024-02-16T19:59:25.201747+03:00","level":"INFO","msg":"Task IT Task 42 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:25.201764+03:00","level":"INFO","msg":"Task IT Task 38 assigned to Developer-5\n"}
+{"time":"2024-02-16T19:59:53.585328+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T19:59:53.588572+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T20:00:38.837846+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T20:00:38.838235+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T20:00:38.849748+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T20:00:38.849777+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T20:00:38.849794+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T20:00:38.849804+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T20:00:38.849885+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T20:00:38.849932+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T20:00:41.228123+03:00","level":"INFO","msg":"Task IT Task 61 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.22825+03:00","level":"INFO","msg":"Task IT Task 50 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228279+03:00","level":"INFO","msg":"Task IT Task 28 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228296+03:00","level":"INFO","msg":"Task IT Task 6 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228321+03:00","level":"INFO","msg":"Task IT Task 21 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228364+03:00","level":"INFO","msg":"Task IT Task 62 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228381+03:00","level":"INFO","msg":"Task IT Task 11 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228394+03:00","level":"INFO","msg":"Task IT Task 9 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228406+03:00","level":"INFO","msg":"Task IT Task 58 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228425+03:00","level":"INFO","msg":"Task IT Task 49 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228438+03:00","level":"INFO","msg":"Task IT Task 59 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228449+03:00","level":"INFO","msg":"Task IT Task 63 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.22846+03:00","level":"INFO","msg":"Task IT Task 53 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228471+03:00","level":"INFO","msg":"Task IT Task 46 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228482+03:00","level":"INFO","msg":"Task IT Task 51 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228493+03:00","level":"INFO","msg":"Task IT Task 37 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228504+03:00","level":"INFO","msg":"Task IT Task 36 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228515+03:00","level":"INFO","msg":"Task IT Task 35 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228533+03:00","level":"INFO","msg":"Task IT Task 32 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228545+03:00","level":"INFO","msg":"Task IT Task 31 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228832+03:00","level":"INFO","msg":"Task IT Task 14 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228849+03:00","level":"INFO","msg":"Task IT Task 60 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228862+03:00","level":"INFO","msg":"Task IT Task 48 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.228899+03:00","level":"INFO","msg":"Task IT Task 40 assigned to Developer-1\n"}
+{"time":"2024-02-16T20:00:41.22892+03:00","level":"INFO","msg":"Task IT Task 33 assigned to Developer-1\n"}
+{"time":"2024-02-16T20:00:41.228932+03:00","level":"INFO","msg":"Task IT Task 24 assigned to Developer-1\n"}
+{"time":"2024-02-16T20:00:41.228951+03:00","level":"INFO","msg":"Task IT Task 5 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.228968+03:00","level":"INFO","msg":"Task IT Task 23 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.228981+03:00","level":"INFO","msg":"Task IT Task 13 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.228993+03:00","level":"INFO","msg":"Task IT Task 4 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229226+03:00","level":"INFO","msg":"Task IT Task 47 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229253+03:00","level":"INFO","msg":"Task IT Task 3 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229268+03:00","level":"INFO","msg":"Task IT Task 0 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229284+03:00","level":"INFO","msg":"Task IT Task 29 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229297+03:00","level":"INFO","msg":"Task IT Task 22 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229312+03:00","level":"INFO","msg":"Task IT Task 16 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229335+03:00","level":"INFO","msg":"Task IT Task 10 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.229351+03:00","level":"INFO","msg":"Task IT Task 65 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.229364+03:00","level":"INFO","msg":"Task IT Task 57 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.229376+03:00","level":"INFO","msg":"Task IT Task 18 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.229736+03:00","level":"INFO","msg":"Task IT Task 41 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.229762+03:00","level":"INFO","msg":"Task IT Task 26 assigned to Developer-2\n"}
+{"time":"2024-02-16T20:00:41.22978+03:00","level":"INFO","msg":"Task IT Task 19 assigned to Developer-2\n"}
+{"time":"2024-02-16T20:00:41.229792+03:00","level":"INFO","msg":"Task IT Task 15 assigned to Developer-2\n"}
+{"time":"2024-02-16T20:00:41.229814+03:00","level":"INFO","msg":"Task IT Task 8 assigned to Developer-1\n"}
+{"time":"2024-02-16T20:00:41.229835+03:00","level":"INFO","msg":"Task IT Task 1 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229851+03:00","level":"INFO","msg":"Task IT Task 25 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229863+03:00","level":"INFO","msg":"Task IT Task 27 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229875+03:00","level":"INFO","msg":"Task IT Task 66 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.229886+03:00","level":"INFO","msg":"Task IT Task 56 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.230119+03:00","level":"INFO","msg":"Task IT Task 43 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.230139+03:00","level":"INFO","msg":"Task IT Task 34 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230155+03:00","level":"INFO","msg":"Task IT Task 7 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230166+03:00","level":"INFO","msg":"Task IT Task 2 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230177+03:00","level":"INFO","msg":"Task IT Task 52 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230188+03:00","level":"INFO","msg":"Task IT Task 20 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230199+03:00","level":"INFO","msg":"Task IT Task 17 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230216+03:00","level":"INFO","msg":"Task IT Task 54 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.230231+03:00","level":"INFO","msg":"Task IT Task 44 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.230248+03:00","level":"INFO","msg":"Task IT Task 12 assigned to Developer-3\n"}
+{"time":"2024-02-16T20:00:41.23065+03:00","level":"INFO","msg":"Task IT Task 45 assigned to Developer-2\n"}
+{"time":"2024-02-16T20:00:41.230684+03:00","level":"INFO","msg":"Task IT Task 30 assigned to Developer-1\n"}
+{"time":"2024-02-16T20:00:41.230707+03:00","level":"INFO","msg":"Task IT Task 64 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.230723+03:00","level":"INFO","msg":"Task IT Task 55 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.230735+03:00","level":"INFO","msg":"Task IT Task 39 assigned to Developer-4\n"}
+{"time":"2024-02-16T20:00:41.230752+03:00","level":"INFO","msg":"Task IT Task 42 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:00:41.230768+03:00","level":"INFO","msg":"Task IT Task 38 assigned to Developer-5\n"}
+{"time":"2024-02-16T20:03:53.978645+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T20:03:53.980005+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T20:04:01.287375+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T20:04:01.287936+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T20:04:01.298228+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T20:04:01.298272+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T20:04:01.298288+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T20:04:01.298296+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T20:04:01.29837+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T20:04:01.298414+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T20:04:28.466835+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T20:04:28.467373+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T20:16:27.511704+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T20:16:27.512346+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T20:16:27.522685+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T20:16:27.522715+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T20:16:27.522728+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T20:16:27.522737+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T20:16:27.522812+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T20:16:27.522853+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T20:17:52.348743+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T20:17:52.350179+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}

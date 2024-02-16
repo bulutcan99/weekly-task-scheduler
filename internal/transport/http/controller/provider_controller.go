@@ -2,7 +2,6 @@ package controller
 
 import (
 	"errors"
-	"fmt"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/dto"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/interfaces"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/application/mapper"
@@ -84,7 +83,6 @@ func (pc *ProviderController) GetProviders(ctx *fiber.Ctx) error {
 		return ctx.Status(fiber.StatusInternalServerError).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})
 	}
 	providerJson := mapper.GetProviderJson(providers)
-	fmt.Println(providerJson)
 	return ctx.Status(fiber.StatusOK).JSON(providerJson)
 }
 

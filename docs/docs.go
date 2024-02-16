@@ -15,7 +15,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/v1/provider/add": {
+        "/v1/provider": {
             "post": {
                 "description": "Add a new provider to add tasks",
                 "consumes": [
@@ -61,19 +61,19 @@ const docTemplate = `{
         },
         "/v1/providers": {
             "get": {
-                "description": "Get all the providers from the database",
+                "description": "Get all the task from the database",
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Get all the providers",
-                "operationId": "get-providers",
+                "summary": "Get all the tasks",
+                "operationId": "get-tasks",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/dto.Provider"
+                                "$ref": "#/definitions/dto.Task"
                             }
                         }
                     },
@@ -92,32 +92,58 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/tasks": {
-            "get": {
-                "description": "Get all the tasks from the database",
+        "/v1/task": {
+            "post": {
+                "description": "Assign tasks to developers",
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Get all the tasks",
+                "summary": "Assign tasks to developers",
+                "operationId": "assign-tasks",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/valueobject.Task"
+                            "type": "object",
+                            "additionalProperties": {
+                                "$ref": "#/definitions/aggregate.DeveloperTask"
                             }
                         }
                     },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {}
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/dto.ErrorResponse"
+                        }
                     }
                 }
             }
         }
     },
     "definitions": {
+        "aggregate.DeveloperTask": {
+            "type": "object",
+            "properties": {
+                "developer": {
+                    "$ref": "#/definitions/entity.Developer"
+                },
+                "tasks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/valueobject.Task"
+                    }
+                },
+                "week": {
+                    "type": "integer"
+                }
+            }
+        },
         "dto.AddProviderRequest": {
             "type": "object",
             "properties": {
@@ -183,6 +209,37 @@ const docTemplate = `{
             "properties": {
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "dto.Task": {
+            "type": "object",
+            "properties": {
+                "difficulty": {
+                    "type": "integer"
+                },
+                "duration": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "entity.Developer": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "remainingHours": {
+                    "type": "integer"
+                },
+                "speed": {
+                    "type": "integer"
                 }
             }
         },
