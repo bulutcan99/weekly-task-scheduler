@@ -52,6 +52,10 @@ func (pc *ProviderController) AddProvider(ctx *fiber.Ctx) error {
 		Url:             request.Url,
 	}
 
+	providerMongo, _ := pc.ProviderService.GetProviderByUrl(ctx.Context(), provider.Url)
+	if providerMongo != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(dto.ErrorResponse{Error: true, Msg: "Provider's url data already exists"})
+	}
 	err = pc.ProviderService.AddProvider(ctx.Context(), provider)
 	if err != nil {
 		return ctx.Status(fiber.StatusInternalServerError).JSON(dto.ErrorResponse{Error: true, Msg: err.Error()})

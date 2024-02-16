@@ -22,6 +22,7 @@ type ENV struct {
 	ReadTimeout               int    `env:"READ_TIMEOUT,required"`
 	MaxIdempotentCallAttempts int    `env:"MAX_IDEMPOTENT_CALL_ATTEMPTS,required"`
 	DevNumber                 int    `env:"DEV_NUMBER,required"`
+	MockFolder                string `env:"MOCK_FOLDER,required"`
 }
 
 var doOnce sync.Once

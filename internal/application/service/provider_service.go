@@ -5,6 +5,7 @@ import (
 	"errors"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/entity"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/repository"
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -73,5 +74,16 @@ func (ps *ProviderService) GetProviderWithTasks(ctx context.Context, id string) 
 		return nil, err
 	}
 
+	return provider, nil
+}
+
+func (ps *ProviderService) GetProviderByUrl(ctx context.Context, url string) (*entity.Provider, error) {
+	filter := bson.M{
+		"url": url,
+	}
+	provider, err := ps.providerRepo.GetProvider(ctx, filter)
+	if err != nil {
+		return nil, err
+	}
 	return provider, nil
 }

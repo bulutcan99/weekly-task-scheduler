@@ -10,6 +10,7 @@ type IProviderService interface {
 	AddProvider(ctx context.Context, provider *entity.Provider) error
 	UpdateProvider(ctx context.Context, provider *entity.Provider) error
 	GetProviders(ctx context.Context) ([]entity.Provider, error)
+	GetProviderByUrl(ctx context.Context, url string) (*entity.Provider, error)
 	DeleteProviders(ctx context.Context, name string) error
 	GetProviderWithTasks(ctx context.Context, id string) (*entity.Provider, error)
 }

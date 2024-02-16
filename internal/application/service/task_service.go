@@ -21,7 +21,6 @@ func NewTaskService(repo repository.ITaskRepository) *TaskService {
 func (ts *TaskService) AddTask(ctx context.Context, task *valueobject.Task) error {
 	filter := bson.M{
 		"provider_id": task.ProviderID,
-		"name":        task.Name,
 	}
 	res := ts.repo.CreateOrUpdate(ctx, filter, task)
 	if res.Err() != nil {

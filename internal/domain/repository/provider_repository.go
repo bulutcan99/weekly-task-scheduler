@@ -12,5 +12,6 @@ type IProviderRepository interface {
 	UpdateProvider(ctx context.Context, provider *entity.Provider) error
 	FindProviders(ctx context.Context) ([]entity.Provider, error)
 	DeleteProviders(ctx context.Context, name string) error
+	GetProvider(ctx context.Context, filter any) (*entity.Provider, error)
 	GetProviderWithTasks(ctx context.Context, id primitive.ObjectID) (*entity.Provider, error)
 }

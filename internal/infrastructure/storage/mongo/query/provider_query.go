@@ -93,3 +93,12 @@ func (t *ProviderRepository) GetProviderWithTasks(ctx context.Context, id primit
 	}
 	return &provider[0], nil
 }
+
+func (t *ProviderRepository) GetProvider(ctx context.Context, filter any) (*entity.Provider, error) {
+	var provider entity.Provider
+	err := t.coll.FindOne(ctx, filter).Decode(&provider)
+	if err != nil {
+		return nil, err
+	}
+	return &provider, nil
+}

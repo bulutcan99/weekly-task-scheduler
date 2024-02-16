@@ -3018,3 +3018,41 @@
 {"time":"2024-02-16T22:48:38.070496+03:00","level":"INFO","msg":"Routers initialized"}
 {"time":"2024-02-16T22:51:16.952443+03:00","level":"INFO","msg":"Server is shutting down..."}
 {"time":"2024-02-16T22:51:16.953917+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:22:01.465684+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T23:22:01.466196+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:22:01.47508+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:22:01.475106+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:22:01.475119+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:22:01.475129+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:22:01.475212+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T23:22:01.475254+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T23:22:22.606677+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T23:22:22.607207+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:23:41.87176+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-16T23:23:41.872322+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:23:41.882375+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:23:41.882408+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:23:41.882422+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:23:41.883911+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:23:42.270058+03:00","level":"INFO","msg":"Seeder finished"}
+{"time":"2024-02-16T23:23:42.270735+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:27:06.436422+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T23:27:06.43685+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:27:06.446947+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:27:06.446972+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:27:06.446987+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:27:06.446997+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:27:06.447081+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T23:27:06.447122+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T23:34:54.803411+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T23:34:54.804694+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-16T23:37:50.835159+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-16T23:37:50.83555+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-16T23:37:50.848044+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-16T23:37:50.848076+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-16T23:37:50.848099+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-16T23:37:50.84811+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-16T23:37:50.8482+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-16T23:37:50.848251+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-16T23:38:42.406366+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-16T23:38:42.408456+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
