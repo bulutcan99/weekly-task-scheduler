@@ -2,10 +2,15 @@ package entity
 
 import (
 	"fmt"
+	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/env"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log/slog"
 	"sort"
 	"strconv"
+)
+
+var (
+	developerNumber = &env.Env.DevNumber
 )
 
 const (
@@ -21,7 +26,7 @@ type Developer struct {
 
 func NewDevelopers() []Developer {
 	devs := make([]Developer, 0)
-	for i := 0; i < 5; i++ {
+	for i := 0; i < *developerNumber; i++ {
 		devs = append(devs, Developer{
 			ID:             primitive.NewObjectID(),
 			Name:           "Developer-" + strconv.Itoa(i+1),

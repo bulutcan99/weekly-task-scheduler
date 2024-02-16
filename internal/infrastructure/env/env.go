@@ -21,6 +21,7 @@ type ENV struct {
 	MaxConnWaitTimeout        int    `env:"MAX_CONN_WAIT_TIMEOUT,required"`
 	ReadTimeout               int    `env:"READ_TIMEOUT,required"`
 	MaxIdempotentCallAttempts int    `env:"MAX_IDEMPOTENT_CALL_ATTEMPTS,required"`
+	DevNumber                 int    `env:"DEV_NUMBER,required"`
 }
 
 var doOnce sync.Once
