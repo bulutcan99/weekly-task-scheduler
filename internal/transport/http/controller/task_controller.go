@@ -28,7 +28,7 @@ func (tc *TaskController) GetTasks(ctx fiber.Ctx) error {
 
 }
 
-// Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek, mongo coleksiyonlari direkt otomatik ekleme, bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
+// Bunlar map ile donulcek (aggregate data ile) ve swagger halledilcek, bide description halledilcek. Bide task upsert kisminda insert ederken eski data gelince hata veriyo.
 func (tc *TaskController) AssignTask(ctx fiber.Ctx) error {
 	developers := entity.NewDevelopers()
 	tasks, err := tc.TaskService.GetTasks(ctx.Context())
