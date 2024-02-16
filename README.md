@@ -18,7 +18,8 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 -   Docker
--   Make
+-   Make (Windows: https://gnuwin32.sourceforge.net/packages/make.htm, Mac: brew install make)
+
 
 ## Setup
 
