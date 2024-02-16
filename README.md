@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple steps.
 
 ## Usage
 
--   Go to `http://localhost:8080` main page
+-   Go to `http://localhost:8080/swagger/index.html#/` main page for swagger
 -   Click on providers section to see and add providers
 -   Example provider json responses are :
 
