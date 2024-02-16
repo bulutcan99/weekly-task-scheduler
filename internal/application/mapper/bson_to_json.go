@@ -10,7 +10,7 @@ func GetProviderJson(provider []entity.Provider) []dto.Provider {
 	var providers []dto.Provider
 	for _, provider := range provider {
 		providers = append(providers, dto.Provider{
-			ID:              provider.ID.Hex(),
+			ID:              provider.ID,
 			Name:            provider.Name,
 			TaskValueKey:    provider.TaskValueKey,
 			TaskDurationKey: provider.TaskDurationKey,

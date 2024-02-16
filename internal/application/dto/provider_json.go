@@ -2,10 +2,11 @@ package dto
 
 import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/valueobject"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type Provider struct {
-	ID              string             `json:"id,omitempty"`
+	ID              primitive.ObjectID `json:"id,omitempty"`
 	Name            string             `json:"name"`
 	TaskValueKey    string             `json:"task_value_key"`
 	TaskDurationKey string             `json:"task_duration_key"`

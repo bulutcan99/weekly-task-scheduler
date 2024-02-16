@@ -12,7 +12,6 @@ import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/infrastructure/storage/mongo/query"
 	http_client "github.com/bulutcan99/weekly-task-scheduler/internal/transport/http"
 	"github.com/goccy/go-json"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log/slog"
 	"os"
 	"os/signal"
@@ -51,14 +50,8 @@ func Start() {
 	taskService := service.NewTaskService(task)
 	fetcher := http_client.NewFetcher(providerService, taskService)
 	for _, provider := range providers {
-		providerId, err := primitive.ObjectIDFromHex(provider.ID)
-		if err != nil {
-			slog.Error("Error in converting provider id")
-			panic(err)
-		}
-
 		err = providerService.AddProvider(ctx, &entity.Provider{
-			ID:              providerId,
+			ID:              provider.ID,
 			Name:            provider.Name,
 			Url:             provider.Url,
 			TaskNameKey:     provider.TaskNameKey,
