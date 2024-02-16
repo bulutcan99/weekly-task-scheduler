@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple steps.
 ## Setup
 
 -   Clone the repository
--   Copy `.env.example` to `.env` and fill in your credentials
+-   Replace `.env.example` to `.env` 
 -   Run `make docker-install`
 -   Run `make run-seeder` // for seed the two mock json datas
 -   Run `make run-server`
