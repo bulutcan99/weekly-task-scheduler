@@ -3106,3 +3106,121 @@
 {"time":"2024-02-16T23:43:23.592411+03:00","level":"INFO","msg":"Repos initialized"}
 {"time":"2024-02-16T23:43:23.593388+03:00","level":"INFO","msg":"Provider's url data already exists"}
 {"time":"2024-02-16T23:43:23.593881+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:14:13.041761+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:14:13.042517+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:14:13.056472+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:14:13.056505+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:14:13.05652+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:14:13.079586+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:14:15.167216+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ImmutableField) Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"time":"2024-02-18T21:14:15.167288+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:14:15.167898+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-5]) incomplete read of message header: read tcp [::1]:49252->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:14:15.167954+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:20:08.444584+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:20:08.445021+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:20:08.455239+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:20:08.455274+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:20:08.455289+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:20:08.458005+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:20:08.667387+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(DuplicateKey) Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: test.tasks index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }"}
+{"time":"2024-02-18T21:20:08.667721+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:20:08.668842+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-4]) incomplete read of message header: read tcp [::1]:49308->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:20:08.668976+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:20:47.027084+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:20:47.027741+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:20:47.037708+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:20:47.037739+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:20:47.037759+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:20:47.04052+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:20:47.248974+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ConflictingUpdateOperators) Updating the path '_id' would create a conflict at '_id'"}
+{"time":"2024-02-18T21:20:47.24907+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:20:47.249762+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:27:46.896222+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:27:46.896695+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:27:46.904022+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:27:46.90404+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:27:46.904048+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:27:46.907941+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:27:47.116657+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ConflictingUpdateOperators) Updating the path '_id' would create a conflict at '_id'"}
+{"time":"2024-02-18T21:27:47.116796+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:27:47.117003+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-4]) incomplete read of message header: read tcp [::1]:49431->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:27:47.11708+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:28:12.663578+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:28:12.66397+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:28:12.675826+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:28:12.675851+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:28:12.675867+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:28:12.677058+03:00","level":"INFO","msg":"Provider's url data already exists. Please check your mock data."}
+{"time":"2024-02-18T21:28:12.677494+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:28:26.245844+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:28:26.246212+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:28:26.253095+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:28:26.253132+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:28:26.253148+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:28:26.255917+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:28:26.486584+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(DuplicateKey) Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: test.tasks index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }"}
+{"time":"2024-02-18T21:28:26.486833+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:28:26.488821+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-4]) incomplete read of message header: read tcp [::1]:49451->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:28:26.489299+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:29:20.712886+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:29:20.713475+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:29:20.723559+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:29:20.723608+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:29:20.723627+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:29:20.724944+03:00","level":"INFO","msg":"Provider's url data already exists. Please check your mock data."}
+{"time":"2024-02-18T21:29:20.725707+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:29:31.359955+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:29:31.360489+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:29:31.37017+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:29:31.370202+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:29:31.370217+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:29:31.373214+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:29:31.576926+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(ConflictingUpdateOperators) Updating the path '_id' would create a conflict at '_id'"}
+{"time":"2024-02-18T21:29:31.577026+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:29:31.578311+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-3]) incomplete read of message header: read tcp [::1]:49467->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:29:31.578475+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:33:02.604451+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:33:02.604895+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:33:02.616363+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:33:02.616387+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:33:02.616397+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:33:02.61815+03:00","level":"INFO","msg":"Provider's url data already exists. Please check your mock data."}
+{"time":"2024-02-18T21:33:02.618812+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:33:11.421151+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:33:11.42146+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:33:11.431747+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:33:11.431782+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:33:11.431802+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:33:11.434867+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:33:11.694347+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"(DuplicateKey) Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: test.tasks index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }"}
+{"time":"2024-02-18T21:33:11.694416+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:33:11.695063+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"connection(localhost:27017[-6]) incomplete read of message header: read tcp [::1]:49512->[::1]:27017: use of closed network connection"}
+{"time":"2024-02-18T21:33:11.695097+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:38:33.734707+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:38:33.735213+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:38:33.74676+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:38:33.7468+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:38:33.746818+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:38:33.749525+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:38:34.031856+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"write exception: write errors: [E11000 duplicate key error collection: test.tasks index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]"}
+{"time":"2024-02-18T21:38:34.032107+03:00","level":"ERROR","msg":"Error in scheduler"}
+{"time":"2024-02-18T21:38:34.03392+03:00","level":"ERROR","msg":"Error while adding task: ","!BADKEY":"write exception: write errors: [E11000 duplicate key error collection: test.tasks index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]"}
+{"time":"2024-02-18T21:38:34.036261+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:38:54.411499+03:00","level":"INFO","msg":"Starting seeder..."}
+{"time":"2024-02-18T21:38:54.41212+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:38:54.424505+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:38:54.424545+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:38:54.424562+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:38:54.428114+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:38:54.657692+03:00","level":"INFO","msg":"Seeder finished"}
+{"time":"2024-02-18T21:38:54.65822+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}
+{"time":"2024-02-18T21:39:05.392962+03:00","level":"INFO","msg":"Starting server..."}
+{"time":"2024-02-18T21:39:05.393506+03:00","level":"INFO","msg":"Config initialized"}
+{"time":"2024-02-18T21:39:05.401967+03:00","level":"INFO","msg":"Connected to MongoDB successfully"}
+{"time":"2024-02-18T21:39:05.402001+03:00","level":"INFO","msg":"Database connected!"}
+{"time":"2024-02-18T21:39:05.402012+03:00","level":"INFO","msg":"Repos initialized"}
+{"time":"2024-02-18T21:39:05.40202+03:00","level":"INFO","msg":"Services initialized"}
+{"time":"2024-02-18T21:39:05.402083+03:00","level":"INFO","msg":"Fiber initialized"}
+{"time":"2024-02-18T21:39:05.402172+03:00","level":"INFO","msg":"Routers initialized"}
+{"time":"2024-02-18T21:39:32.732787+03:00","level":"INFO","msg":"Server is shutting down..."}
+{"time":"2024-02-18T21:39:32.733214+03:00","level":"INFO","msg":"Connection to MongoDB closed successfully"}

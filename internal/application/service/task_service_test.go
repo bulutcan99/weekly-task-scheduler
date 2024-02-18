@@ -16,7 +16,7 @@ type MockTaskRepository struct {
 	mock.Mock
 }
 
-func (m *MockTaskRepository) CreateOrUpdate(ctx context.Context, filter any, update any) *mongo.SingleResult {
+func (m *MockTaskRepository) InsertTask(ctx context.Context, task valueobject.Task) error {
 	args := m.Called(ctx, filter, update)
 	return args.Get(0).(*mongo.SingleResult)
 }

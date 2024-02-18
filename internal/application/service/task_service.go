@@ -5,6 +5,7 @@ import (
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/model/valueobject"
 	"github.com/bulutcan99/weekly-task-scheduler/internal/domain/repository"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -19,12 +20,10 @@ func NewTaskService(repo repository.ITaskRepository) *TaskService {
 }
 
 func (ts *TaskService) AddTask(ctx context.Context, task *valueobject.Task) error {
-	filter := bson.M{
-		"provider_id": task.ProviderID,
-	}
-	res := ts.repo.CreateOrUpdate(ctx, filter, task)
-	if res.Err() != nil {
-		return res.Err()
+	task.ID = primitive.NewObjectID()
+	err := ts.repo.InsertTask(ctx, *task)
+	if err != nil {
+		return err
 	}
 	return nil
 }

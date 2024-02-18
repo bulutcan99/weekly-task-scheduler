@@ -56,7 +56,6 @@ func (s *Fetcher) FetchTasksFromMongo(ctx context.Context) error {
 				difficulty := helper.ConvertToInt(task[provider.TaskValueKey].(float64))
 				duration := helper.ConvertToInt(task[provider.TaskDurationKey].(float64))
 				taskData := &valueobject.Task{
-					ID:         primitive.NewObjectID(),
 					ProviderID: provider.ID,
 					Name:       taskName,
 					Difficulty: difficulty,
